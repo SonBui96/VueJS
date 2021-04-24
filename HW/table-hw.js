@@ -5,6 +5,7 @@ var app = new Vue({
       td2:'',
       tdAdd:'',
       tr:'',
+      countDel:"",
       tableData:[],
       rowData:[],
       colsData:[]
@@ -25,6 +26,14 @@ var app = new Vue({
       },
       addCols(){
         this.colsData.push(this.td1);
+      },
+      delCount(){
+        this.rowData.splice(0,this.countDel);
+        this.colsData.splice(0,this.countDel);
+        console.log(this.countDel);
+      },
+      delTable(){
+        this.tableData.splice(0,this.tableData.length)
       }
     }
   })
